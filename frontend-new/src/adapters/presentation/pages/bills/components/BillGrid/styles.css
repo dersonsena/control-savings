@@ -1,0 +1,25 @@
+section.bills {
+    background-color: #fff;
+}
+
+div.bill-row {
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 0;
+    padding: 0 1.5em;
+}
+
+div.bill-row {
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 0;
+    padding: 0 1.5em;
+}
+
+div.bill-row.overdue {
+    background-color: #fff9e9;
+}
+
+div.bill-row:hover {
+    background-color: #EDFDF4;
+}
