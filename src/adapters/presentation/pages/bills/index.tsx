@@ -5,13 +5,16 @@ import { PrimeIcons } from 'primereact/api'
 import { ListBillsService } from '@/application/services'
 import { BillGrid } from './components/bill-grid'
 
-import './styles.scss'
+import './styles.css'
 
 type Props = {
   listBillsUseCase: ListBillsService
 }
 
-const menuItems = [{ label: 'Lançamentos', icon: 'pi pi-align-center' }, { label: 'Relatórios' }]
+const menuItems = [
+  { label: 'Lançamentos', icon: PrimeIcons.MONEY_BILL },
+  { label: 'Relatórios', icon: PrimeIcons.ALIGN_JUSTIFY },
+]
 
 export const BillsPage: React.FunctionComponent<Props> = () => {
   return (

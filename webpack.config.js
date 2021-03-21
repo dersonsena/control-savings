@@ -1,5 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
@@ -26,7 +27,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/i,
         use: [
           { loader: 'style-loader' },
-          { loader: 'css-loader', options: { modules: true }},
+          { loader: 'css-loader', options: { importLoaders: 1 }},
           { loader: 'sass-loader' }
         ]
       },
@@ -55,6 +56,7 @@ module.exports = {
     'react-dom': 'ReactDOM'
   },
   plugins: [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin()
   ]
 }

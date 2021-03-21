@@ -8,12 +8,12 @@ body {
   background-color: #ebebeb;
 }
 
-div.container {
+.container {
   max-width: 960px;
   margin: 0 auto;
   background: #fff;
 }
 
 .p-menubar {
-  background: #fff;
+  background: #fff !important;
 }
