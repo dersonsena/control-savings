@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { BillGrid } from './components/BillGrid';
-import { ListBills } from '../../../../domain/usecases';
-import { BillViewModel } from './view-model/bill';
+import React, { useEffect } from 'react';
+import { BillGrid } from '@/adapters/presentation/pages/bills/components/bill-grid/BillGrid';
+import { ListBills } from '@/domain/usecases';
 
 type Props = {
   listBillsUseCase: ListBills;

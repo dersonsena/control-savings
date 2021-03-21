@@ -1,24 +1,25 @@
-import 'primereact/resources/primereact.min.css';
-import 'primereact/resources/themes/mdc-light-indigo/theme.css';
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
-import './App.css';
+import 'primereact/resources/primereact.min.css'
+import 'primereact/resources/themes/mdc-light-indigo/theme.css'
+import 'primeicons/primeicons.css'
+import 'primeflex/primeflex.css'
+import '@/App.css'
 
-import { Menubar } from 'primereact/menubar';
-import { PrimeIcons } from 'primereact/api';
-import { BillsPage } from './presentation/pages/financial/bills';
-import { ListBillsService } from './application/services';
-import { FakeListBillsRepository } from './infra/repositories/fake-list-bills';
+import React from 'react'
+import { Menubar } from 'primereact/menubar'
+import { PrimeIcons } from 'primereact/api'
+import { BillsPage } from '@/adapters/presentation/pages/bills'
+import { ListBillsService } from '@/application/services'
+import { FakeListBillsRepository } from '@/infra/repositories/fake-list-bills'
 
 const menuItems = [
   { label: 'Lançamentos', icon: PrimeIcons.MONEY_BILL },
   { label: 'Relatórios', icon: PrimeIcons.CHART_BAR },
-];
+]
 
-const fakeListBillRepo = new FakeListBillsRepository();
-const listBillsService = new ListBillsService(fakeListBillRepo);
+const fakeListBillRepo = new FakeListBillsRepository()
+const listBillsService = new ListBillsService(fakeListBillRepo)
 
-const App = () => (
+const App: React.FunctionComponent = () => (
   <div className="App">
     <header className="App-header">
       <nav>
@@ -32,6 +33,6 @@ const App = () => (
       </section>
     </main>
   </div>
-);
+)
 
-export default App;
+export default App

@@ -1,17 +1,15 @@
-import React from 'react';
-import classNames from 'classnames';
-import { BillStatusAction } from './BillStatusAction';
-import { BillAmount } from './BillAmount';
-import { BillBullet } from './BillBullet';
-import { BillViewModel, BillType as Type } from '../../view-model/bill';
-import { BillType } from '../../../../../../domain/entities';
+import React from 'react'
+import classNames from 'classnames'
+import { BillStatusAction, BillAmount, BillBullet } from './'
+import { BillViewModel, BillType as Type } from '../../view-model/bill'
+import { BillType } from '@/domain/entities'
 
 type Props = {
-  bill: BillViewModel;
-};
+  bill: BillViewModel
+}
 
 export const BillRow: React.FunctionComponent<Props> = ({ bill }) => {
-  const overdue = new Date(bill.dueDate) >= new Date();
+  const overdue = new Date(bill.dueDate) >= new Date()
 
   return (
     <div key={bill.id} className={classNames('bill-row p-grid p-pb-2 p-pt-2', { overdue })}>
@@ -30,9 +28,9 @@ export const BillRow: React.FunctionComponent<Props> = ({ bill }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const getBillColorByType = (billType: Type): string => {
-  return billType.name === BillType.EXPENSE ? '#FF7E7C' : '#56caa4';
-};
+  return billType.name === BillType.EXPENSE ? '#FF7E7C' : '#56caa4'
+}

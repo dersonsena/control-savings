@@ -22,13 +22,16 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "project": "tsconfig.json"
   },
   "include": [
     "src",
     "tests"
   ],
-  "exclude": []
+  "exclude": [
+    "**/node_modules/**"
+  ]
 }
