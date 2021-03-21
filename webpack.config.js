@@ -20,21 +20,31 @@ module.exports = {
       {
         test: /\.ts(x?)$/,
         loader: 'ts-loader',
-        exclude: '/node_modules/'
+        exclude: /node_modules/
       },
       {
-        test: /\.(s?)css$/,
+        test: /\.(sa|sc|c)ss$/i,
         use: [
           { loader: 'style-loader' },
-          { loader: 'css-loader', options: { modules: true } },
+          { loader: 'css-loader', options: { modules: true }},
           { loader: 'sass-loader' }
-        ],
-        exclude: '/node_modules/'
+        ]
+      },
+      {
+        test: /\.(png|gif|woff|woff2|eot|ttf|svg)$/,
+        use: [
+          { loader: 'url-loader', options: { limit: 100000 } }
+        ]
+      },
+      {
+        test: /\.(ico|jpe?g|png|gif|webp|svg|mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
+        loader: "file-loader"
       }
     ]
   },
   devServer: {
     contentBase: './public',
+    hot: true,
     writeToDisk: true,
     historyApiFallback: true,
     port: 3000

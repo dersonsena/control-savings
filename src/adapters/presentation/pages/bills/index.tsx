@@ -1,27 +1,30 @@
-import { PrimeIcons } from 'primereact/api'
 import React from 'react'
+import { Menubar } from 'primereact/menubar'
+import { PrimeIcons } from 'primereact/api'
 
-import './styles.scss'
 import { ListBillsService } from '@/application/services'
+import { BillGrid } from './components/bill-grid'
+import './styles.scss'
 
 type Props = {
   listBillsUseCase: ListBillsService
 }
 
-const menuItems = [
-  { label: 'Lançamentos', icon: PrimeIcons.MONEY_BILL },
-  { label: 'Relatórios', icon: PrimeIcons.CHART_BAR },
-]
+const menuItems = [{ label: 'Lançamentos', icon: 'pi pi-align-center' }, { label: 'Relatórios' }]
 
 export const BillsPage: React.FunctionComponent<Props> = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <nav>MENU</nav>
+        <nav>
+          <Menubar model={menuItems} />
+        </nav>
       </header>
 
       <main className="container">
-        <section className="p-mt-5">GRID</section>
+        <section className="p-mt-5">
+          <BillGrid bills={[]} />
+        </section>
       </main>
     </div>
   )
