@@ -4,6 +4,7 @@ import { PrimeIcons } from 'primereact/api'
 
 import { ListBillsService } from '@/application/services'
 import { BillGrid } from './components/bill-grid'
+
 import './styles.scss'
 
 type Props = {
@@ -21,11 +22,11 @@ export const BillsPage: React.FunctionComponent<Props> = () => {
         </nav>
       </header>
 
-      <main className="container">
+      <div className="container">
         <section className="p-mt-5">
           <BillGrid bills={[]} />
         </section>
-      </main>
+      </div>
     </div>
   )
 }

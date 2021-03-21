@@ -42,12 +42,13 @@ module.exports = {
       }
     ]
   },
+  target: 'web',
   devServer: {
     contentBase: './public',
-    hot: true,
+    compress: true,
     writeToDisk: true,
     historyApiFallback: true,
-    port: 3000
+    port: 4000
   },
   externals: {
     react: 'React',
