@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react';
-import { BillGrid } from '@/adapters/presentation/pages/bills/components/bill-grid/BillGrid';
-import { ListBills } from '@/domain/usecases';
+import React from 'react'
+import './styles.scss'
 
-type Props = {
-  listBillsUseCase: ListBills;
-};
+type Props = {}
 
-export const BillsPage: React.FunctionComponent<Props> = ({ listBillsUseCase }) => {
-  useEffect(() => {
-    console.log('olá');
-  });
-
+export const BillsPage: React.FunctionComponent<Props> = () => {
   return (
-    <>
-      <BillGrid bills={[]} />
-    </>
-  );
-};
+    <div className="App">
+      <header className="App-header">
+        <nav>Menu</nav>
+      </header>
+
+      <main className="container">
+        <section className="p-mt-5">Grid</section>
+      </main>
+    </div>
+  )
+}

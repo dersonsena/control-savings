@@ -1,4 +1,6 @@
 node_modules
 dist
 coverage
-react-app-env.d.ts
+public
+**.d.ts
+*.scss
